@@ -34,3 +34,15 @@ The service provides an endpoint that will determine, from a set of recipes, wha
     ```
     
 3. Run Springboot LunchApplication
+Endpoints
+1.  http://localhost:8080/lunch/{date} - To return recipes based on availability - (I assumed it means recipes based on best before date)
+2.  http://localhost:8080/lunch/useBy/{date} : To return recipes available based on ingredients having useby date greater than passed
+3. http://localhost:8080/lunch/afterBestBefore/{date} : To return recipes available based on ingredients best before date expired and under used by. NOTE: Ordering is not implemented for it.
+4. http://localhost:8080/lunch//filterOnIngredients/{List , separated} : To return recipes available based on exluding ingredients passed
+5. http://localhost:8080/lunch/recipe/{title} : To return recipes based the title. will return error to client if value not found
+ 
+
+NOTE: 
+- I have used local postgres without Docker
+- Test cases are not written for all cases because of time constraints
+
